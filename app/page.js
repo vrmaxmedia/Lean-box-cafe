@@ -254,7 +254,7 @@ END:VCARD`;
     CLIENT_CONFIG.whatsappChannelUrl ||
     CLIENT_CONFIG.facebookUrl ||
     CLIENT_CONFIG.youtubeUrl ||
-    CLIENT_CONFIG.googlePageUrl
+    CLIENT_CONFIG.menuUrl
   );
 
   if (!mounted) return <div style={{ minHeight: "100vh", backgroundColor: "#f4e8c8" }} />;
@@ -438,16 +438,6 @@ END:VCARD`;
               </a>
               )}
 
-              {/* Google Page */}
-              {CLIENT_CONFIG.googlePageUrl && (
-                <a href={CLIENT_CONFIG.googlePageUrl} target="_blank" rel="noreferrer" className="soft-circle-action">
-                  <div className="icon-disc google-disc">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12h-8"/><path d="M20 12a8 8 0 1 1-2.4-5.7"/></svg>
-                  </div>
-                  <span className="icon-tag">Google Page</span>
-                </a>
-              )}
-
               {/* Menu */}
               {CLIENT_CONFIG.menuUrl && (
                 <a href={CLIENT_CONFIG.menuUrl} target="_blank" rel="noreferrer" className="soft-circle-action">
@@ -547,7 +537,7 @@ END:VCARD`;
           --ink: #2a1a0e;
           min-height: 100vh;
           background: radial-gradient(ellipse at 50% 0%, #fbf3da 0%, #f4e8c8 55%, #eddcb0 100%);
-          padding: 8px 16px 20px;
+          padding: 20px 16px 20px;
           box-sizing: border-box;
           font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
           color: #2a1a0e;
@@ -564,15 +554,15 @@ END:VCARD`;
           text-align: center;
         }
         .brand-medallion-badge {
-          margin-top: 2px;
+          margin-top: 6px;
           margin-bottom: 2px;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
         .logo-circle-container {
-          width: clamp(88px, 12vh, 112px);
-          height: clamp(88px, 12vh, 112px);
+          width: clamp(96px, 13vh, 120px);
+          height: clamp(96px, 13vh, 120px);
           border-radius: 50%;
           background-color: transparent;
           background-size: cover;
@@ -646,22 +636,23 @@ END:VCARD`;
           flex-wrap: wrap;
           justify-content: center;
           gap: 5px;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           width: 100%;
         }
         .embossed-pill {
           border-radius: 999px;
-          padding: 8px 15px;
+          padding: 5px 11px;
           font-family: inherit;
-          font-size: 10.5px;
-          font-weight: 600;
-          letter-spacing: 1.3px;
+          font-size: 10px;
+          font-weight: 400;
+          letter-spacing: 0.8px;
           text-transform: uppercase;
+          line-height: 1.2;
           background: var(--soft);
           color: #5a1a22;
           border: 1px solid var(--line);
           cursor: pointer;
-          box-shadow: 0 2px 8px rgba(150, 120, 60, 0.1);
+          box-shadow: 0 2px 6px rgba(150, 120, 60, 0.1);
           transition: all 0.16s ease;
         }
         .embossed-pill:active {
@@ -865,6 +856,7 @@ END:VCARD`;
           align-items: center;
           gap: 5px;
           text-decoration: none !important;
+          font-family: inherit;
           color: #4a3c30;
           background: transparent;
           border: none;
